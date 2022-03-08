@@ -72,6 +72,8 @@ void calculateVote(int vote)
         break;
     }
 }
+
+
 void main()
 {
     int choose;
@@ -88,7 +90,7 @@ void main()
     {    
         printf("Press 1 to vote Shahin\n");
         printf("Press 2 to vote Lubaba\n");
-        printf("Press 3 to vote APP\n");
+        printf("Press 3 to vote Joy\n");
         printf("Press 4 to vote Johir\n");
         printf("Press 5 to show election result\n");
         printf("Please choose : ");
