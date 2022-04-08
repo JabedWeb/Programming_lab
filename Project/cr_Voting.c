@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include<stdlib.h>  
 int Shahin=0, Lubaba=0, Joy=0, Johir=0;
 void electionResult()
 {
@@ -74,18 +75,19 @@ void calculateVote(int vote)
 }
 
 
-void main()
+int main()
 {
     int choose;
-    
-    
-        printf("\n*********Welcome to the simple voting system project*********\n\n");
+
+        printf("*********Welcome to the voting system project*********\n\n");
         printf("                         MP election                        \n\n");
         printf("*************************************************************\n");
         printf("|           1.Shahin             |          2.Lubaba         |\n");
         printf("*************************************************************\n");
-        printf("|           3.APP             |          4.Johir              |\n");
+        printf("|           3.Joy                |          4.Johir          |\n");
         printf("*************************************************************\n\n");
+
+
     do
     {    
         printf("Press 1 to vote Shahin\n");
@@ -95,6 +97,11 @@ void main()
         printf("Press 5 to show election result\n");
         printf("Please choose : ");
         scanf("%d", &choose);
+
+        if(choose==1 || choose==2 || choose==3 || choose==4){
+            system ("cls");  
+        }
+     
         if (choose==5)
         {
             electionResult();
@@ -104,4 +111,6 @@ void main()
         } 
         printf("\n");
     } while (choose != 5);
+
+    return 0;
 }
