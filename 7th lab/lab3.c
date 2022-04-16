@@ -14,9 +14,9 @@ int main()
     int start, end;
     
     /* Input start and end range */
-    printf("Enter the lower limit to find strong number: ");
+    printf("Enter the lower limit : ");
     scanf("%d", &start);
-    printf("Enter the upper limit to find strong number: ");
+    printf("Enter the upper limit : ");
     scanf("%d", &end);
     
     printf("All strong numbers between %d to %d are: \n", start, end);

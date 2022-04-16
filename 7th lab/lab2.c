@@ -1,34 +1,26 @@
-/**
- * C program to create simple calculator using switch case and functions
- */
-
 #include <stdio.h>
-
-
 /** 
  * Function declarations for calculator
  */
-float add(float num1, float num2);
-float sub(float num1, float num2);
-float mult(float num1, float num2);
-float div(float num1, float num2);
+int add(int num1, int num2);
+int sub(int num1, int num2);
+int mult(int num1, int num2);
+int div(int num1, int num2);
 
 
 
 int main()
 {
-    char op;
-    float num1, num2, result=0.0f;
+    char option;
+    int num1, num2, result=0; 
 
     /* Print welcome message */
-    printf("WELCOME TO SIMPLE CALCULATOR\n");
-    printf("----------------------------\n");
-    printf("Enter [number 1] [+ - * /] [number 2]\n");
+    printf("Enter [your first Number] then Select operation [+ - * /] and then [your second number]\n");
 
-    /* Input two number and operator from user */
-    scanf("%f %c %f", &num1, &op, &num2);
+    /* Input two number and optionerator from user */
+    scanf("%d %c %d", &num1, &option, &num2);
 
-    switch(op)
+    switch(option)
     {
         case '+': 
             result = add(num1, num2);
@@ -47,11 +39,11 @@ int main()
             break;
 
         default: 
-            printf("Invalid operator");
+            printf("Invalid optionerator");
     }
 
     /* Print the result */
-    printf("%.2f %c %.2f = %.2f", num1, op, num2, result);
+    printf("%d %c %d = %d", num1, option, num2, result);
 
     return 0;
 }
@@ -60,7 +52,7 @@ int main()
 /**
  * Function to add two numbers
  */
-float add(float num1, float num2)
+int add(int num1, int num2)
 {
     return num1 + num2;
 }
@@ -68,7 +60,7 @@ float add(float num1, float num2)
 /**
  * Function to subtract two numbers
  */
-float sub(float num1, float num2)
+int sub(int num1, int num2)
 {
     return num1 - num2;
 }
@@ -76,7 +68,7 @@ float sub(float num1, float num2)
 /**
  * Function to multiply two numbers
  */
-float mult(float num1, float num2)
+int mult(int num1, int num2)
 {
     return num1 * num2;
 }
@@ -84,7 +76,7 @@ float mult(float num1, float num2)
 /**
  * Function to divide two numbers
  */
-float div(float num1, float num2)
+int div(int num1, int num2)
 {
     return num1 / num2;
 }
