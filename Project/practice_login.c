@@ -1,80 +1,97 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int main()
+struct login
 {
-    char uName[25],siginUpPasword[20],signUpConfirmPassword[20],email[30],loginEmail[30],loginPassword[20];
-    int choice,checkEmail,CheckPassword;
-    
-// sigin up complete then level called
-login:
-    printf("******************************\n****** welcome to programming*********\n*************************\n");
-    printf("1.Login.\n2.Sign Up\n");
-    scanf("%d",&choice);
-    
-    // login part
-    if(choice==1)
-    {
-// if user press 1 then comming here
-        printf("******** Login *********\n");
-againLogin:
-        printf("enter your email\n");
-        scanf("%s",&loginEmail);
+    char fname[30];
+    char lname[30];
+    char username[30];
+    char password[20];
+};
 
-// user take incorrect password so level called try again.
-        printf("enter your password\n");
-        scanf("%s",&loginPassword);
+void login ();
+void registration ();
 
-        checkEmail = strcmp(loginEmail,email);
-        CheckPassword= strcmp(loginPassword,siginUpPasword);
+int main ()
+{
+    int option;
 
-        if (strcmp(loginEmail,email)==0 && strcmp(loginPassword,siginUpPasword)==0){
-            printf("******** welcome login successful**********\n");
-                printf("your user name is: %s\n",uName);
-                printf("your email is: %s\n",email);
-                printf("your password is: %s\n",siginUpPasword);
-                printf("your confrim password is: %s\n",signUpConfirmPassword);
-        }
-        else
+    printf("Press '1' to Register\nPress '2' to Login\n\n");
+    scanf("%d",&option);
+
+    getchar();           // catching newline.
+
+    if(option == 1)
         {
-        printf("incorrect email or password\n");
-        goto againLogin;
+            system("CLS");
+            registration();
+        }
+
+    else if(option == 2)
+        {
+            system("CLS");
+            login();
         }
 }
 
-// sign up part.
-    else if(choice==2)
-    {
-        // if user choic 2 so coming here.
-        printf("******** Sign Up *********\n");
+void login ()
+{
+    char username[30],password[20];
+    FILE *log;
 
-        printf("enter user Name\n");
-        scanf("%s",&uName);
+    log = fopen("login.txt","r");
 
-        printf("enter your email\n");
-        scanf("%s",&email);
+    struct login l;
 
-again:
+    printf("\nPlease Enter your login credentials below\n\n");
+    printf("Username:  ");
+    fgets(username, 30, stdin);
+    printf("\nPassword: ");
+    printf("\n");
+    fgets(password, 20, stdin);
 
-        printf("enter your password\n");
-        scanf("%s",&siginUpPasword);
-
-        printf("enter your confirm password\n");
-        scanf("%s",&signUpConfirmPassword);
-
-// if password and confrim password same then goto login level
-            if (strcmp(siginUpPasword,signUpConfirmPassword)==0){
-                goto login;
-            }
-        // if not match then again take input password and confirm password( goto to again level)
-        else
+    while(fread(&l,sizeof(l),1,log))
         {
-            printf("can't match password. try again\n");
-            goto again;
-        }
-    }
-    // if user choic wrong option then show this message
-    else
-        printf("invalid option\n");
+        if(strcmp(username,l.username)==0 && strcmp(password,l.password)==0)
 
+            {   
+                printf("\nSuccessful Login\n");
+            }
+        else 
+            {
+                printf("\nIncorrect Login Details\nPlease enter the correct credentials\n");
+            }
+        }
+
+    fclose(log);
+}
+
+void registration()
+{
+    FILE *log;
+
+    log=fopen("login.txt","w");
+    struct login l;
+
+    printf("\nWelcome to your online course provider. We need to enter some details for registration.\n\n");
+    printf("\nEnter First Name:\n");
+    scanf("%s",l.fname);
+    printf("\nEnter Surname:\n");
+    scanf("%s",l.lname);
+
+    printf("Thank you.\nNow please choose a username and password as credentials for system login.\nEnsure the username is no more than 30 characters long.\nEnsure your password is at least 8 characters long and contains lowercase, uppercase, numerical and special character values.\n"); 
+
+    printf("\nEnter Username:\n");
+    scanf("%s",l.username);
+    printf("\nEnter Password:\n");
+    scanf("%s",l.password);
+
+    fwrite(&l,sizeof(l),1,log);
+    fclose(log);
+    printf("\nRegistration Successful!\n");
+    printf("Press any key to continue...");
+    getchar();
+    system("CLS");
+    login();
 }
