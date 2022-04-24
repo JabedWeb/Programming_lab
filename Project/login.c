@@ -8,7 +8,7 @@ struct login                           // before the first use of `l`.
     char lname[30];
     char username[30];
     char password[20];
-};
+}l;
 
 void login (void);
 void registration (void);
@@ -85,8 +85,7 @@ void registration(void)
     log=fopen("login.txt","w");
     if (log == NULL)
     {
-        fputs("Error at opening File!", stderr);
-        exit(1);
+        printf ("there is no file");
     }
 
 
@@ -94,7 +93,7 @@ void registration(void)
 
     printf("\nWelcome to your online course provider. We need to enter some details for registration.\n\n");
     printf("\nEnter First Name:\n");
-    scanf("%c",l.fname);
+    scanf("%s",l.fname);
     printf("\nEnter Surname:\n");
     scanf("%s",l.lname);
 
@@ -107,12 +106,13 @@ void registration(void)
 
 
     fwrite(&l,sizeof(l),1,log);
-    fclose(log);
+    
 
     printf("\nConfirming details...\n...\nWelcome, %s!\n\n",firstname);
     printf("\nRegistration Successful!\n");
     printf("Press any key to continue...");
-        getchar();
+    getchar();
     system("CLS");
+    fclose(log);
     login();
 }
