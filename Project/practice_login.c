@@ -5,7 +5,7 @@ int main()
 {
     char uName[25],siginUpPasword[20],signUpConfirmPassword[20],email[30],loginEmail[30],loginPassword[20];
     int choice,checkEmail,CheckPassword;
-
+    
 // sigin up complete then level called
 login:
     printf("******************************\n****** welcome to programming*********\n*************************\n");
