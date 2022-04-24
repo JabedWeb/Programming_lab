@@ -7,7 +7,7 @@ ID : 213902082
 
 // pre remainder to compilar or pre declaration function
 void displayResult(float firstNum,float SecondN, char opt, float result);
-void Add(float firstNum,float SecondN);
+void addition(float firstNum,float SecondN);
 void subtruction(float firstNum,float SecondN);
 void multiplication(float firstNum,float SecondN);
 void division(float firstNum,float SecondN);
