@@ -1,11 +1,15 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h> 
-#include <conio.h>
+#include <conio.h> 
+//Calculate function this fuction helps to calculate the vote 
 void calculateVote(int vote);
+//for this function metnor need acces
 void votingResult();
+//before voting start all candidate vote is zero
+
 int Shahin=0, Lubaba=0, Joy=0, Johir=0;
-////Main Function
+
 int main()
 {
     

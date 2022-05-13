@@ -1,10 +1,8 @@
 /* Name : Nafisa Lubaba Khan Raisa
 ID : 213902082
 */
-
 #include<stdio.h>
 #include<stdlib.h>
-
 // pre remainder to compilar or pre declaration function
 void displayResult(float firstNum,float SecondN, char opt, float result);
 void addition(float firstNum,float SecondN);

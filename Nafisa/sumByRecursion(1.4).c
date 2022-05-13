@@ -1,10 +1,6 @@
 /* Name : Nafisa Lubaba Khan Raisa
 ID : 213902082
 */
-
-
-
-
 #include <stdio.h>
 // function declaration
 int sumOfDigits(int num);

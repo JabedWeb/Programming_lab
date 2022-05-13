@@ -5,7 +5,6 @@ int main()
 {
     char uName[25],siginUpPasword[20],signUpConfirmPassword[20],email[30],loginEmail[30],loginPassword[20];
     int choice,checkEmail,CheckPassword;
-
 // sigin up complete then level called
 login:
     printf("******************************\n****** welcome to programming*********\n*************************\n");
@@ -76,5 +75,4 @@ again:
     // if user choic wrong option then show this message
     else
         printf("invalid option\n");
-
 }
