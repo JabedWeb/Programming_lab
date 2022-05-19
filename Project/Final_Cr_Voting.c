@@ -78,7 +78,7 @@ void votingResult()
 {
     char username[30]; 
     char password[12]; 
-    printf("Enter your surname:\n"); 
+    printf("Enter your surname:\n");
     scanf("%s",&username); 
     printf("Enter your password:\n"); 
     scanf("%s",&password);  
